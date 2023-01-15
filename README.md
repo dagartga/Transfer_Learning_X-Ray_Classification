@@ -1,6 +1,7 @@
 # Transfer Learning X-Ray Classification for Pneumonia Detection
 
 ## Exploratory Data Analysis
+From the notebook [transfer-learning-x-ray-eda](./notebooks/transfer-learning-x-ray-eda.ipynb)
 
 ### Training, Validation, and Test Set Counts
 
@@ -38,4 +39,11 @@ It becomes clear from the pixel intensities below that there can be a **signific
 ![pixels_6](./images/pixels_6.png)
 
 ## Choosing a Transfer Model
+
+Compare base models of VGG-16, InceptionV3, ResNet50, and DenseNet201 for performance. Use the best performing model for fine tuning.
+
+### Pre-Processing
+
+
+
 
