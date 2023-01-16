@@ -45,5 +45,60 @@ Compare base models of VGG-16, InceptionV3, ResNet50, and DenseNet201 for perfor
 ### Pre-Processing
 
 
+The X-ray image files were combined and randomly split into the into the train, val, and test sets at a 60:20:20 ratio.
+
+![Final Image Counts](./images/final_image_counts.png)
+
+After randomly splitting the images, the distribution of Pneumonia and Normal was extremely similar between all sets of images.
+
+![Final Distribution of Classes](./images/final_distribution_classes.png)
+
+Based on the distribution imbalance, weights were applied to have the underrepresented class (Normal) have more of a penalty for wrong predictions.
+
+![Class Weights](./images/weights_for_classes.png)
+
+### Comparing Base Models
+
+For the following models (VGG-16, InceptionV3, ResNet-50, DenseNet-201): 
+
+Transfer learning models did not include the final dense layer and the pre-trained layers were frozen. A **2D Global Averaging layer** followed by a **30% Dropout layer** followed by a **Dense layer** with one node of **sigmoid activation** were added to do binary classification of the features created by the pre-trained model.
+
+Chosen hyperparameter values listed below, all others were defaults.
+- **Optimzer:** Adam
+- **Loss Function:** Binary Crossentropy
+- **Batch Size:** 512
+- **Epochs:** 50
+- **Early Stopping:** 10 patience
+
+The **best performance** for this base model comparison was from **DenseNet-201** with an **F1 Score of 0.96** for the holdout test set
+
+![DenseNet50 Training Performance](./images/densenet201_training_performance.png)
+![DenseNet50 Testing Performance](./images/densenet201_testing_performance.png)
+
+Below are the test results for the other base models:
+
+#### VGG-16
+
+![VGG16 Testing Performance](./images/vgg16_test_performance.png)
+
+#### InceptionV3
+
+![InceptionV3 Testing Performance](./images/inception_testing_performance.png)
+
+#### ResNet-50
+
+![ResNet50 Testing Performance](./images/resnet50_testing_performance.png)
+
+
+
+## HyperParameter Tuning
+
+- **Step 1:** Tune Learning Rate
+- **Step 2:** Tune Hidden Units and Batch Size
+- **Step 3:** Tune Number of Layers
+- **Step 4:** Tune Learning Rate Decay
+- **Step 5:** Tune Momentum
+- **Step 6:** Final random search around best performing hyperparameters
+
 
 
