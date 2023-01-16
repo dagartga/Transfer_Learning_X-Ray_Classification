@@ -100,5 +100,12 @@ Below are the test results for the other base models:
 - **Step 5:** Tune Momentum
 - **Step 6:** Final random search around best performing hyperparameters
 
+### Learning Rate
+Tested 10 randomly selected learning rates between 1.0 and 0.0001. The trend of performance was best in the range of 0.09 to 0.05 for the learning rate.
+The **best validation accuracy was 0.9639** from **learning rate 0.06103**
 
-
+### Hidden Units and Batch Size
+A grid search of both number of hidden units and the batch size was does together.
+- A single Dense layer with the hidden units followed by a Batch Normalization layer followed by a Dropout of 30% was added between the pre-trained model and the output layer.
+- 5 hidden unit values were tried **[4096, 2048, 1024, 512, 256]** for the single Dense layer
+- 3 batch sizes of **[32, 64, 128]** * 8 TPU replicas
