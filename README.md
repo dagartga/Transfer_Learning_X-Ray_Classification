@@ -127,6 +127,7 @@ A grid search of both number of hidden units and the batch size was does togethe
 - **Batch Size:** 32 * 8 TPUs
 - **Learning Rate Decay:** s value of 34
 - **Momentum:** 0.84
+
 **Resulting in Validation Accuracy of 0.9746**
  
  ### Fine Tune Based on Individual Results
