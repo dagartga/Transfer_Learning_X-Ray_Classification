@@ -101,8 +101,8 @@ Below are the test results for the other base models:
 - **Step 6:** Final random search around best performing hyperparameters
 
 ### Learning Rate
-Tested 10 randomly selected learning rates between 1.0 and 0.0001. The trend of performance was best in the range of 0.09 to 0.05 for the learning rate.
-The **best validation accuracy was 0.9639** from **learning rate 0.06103**
+Tested 10 randomly selected learning rates between 1.0 and 0.0001. The trend of performance was best in the range of 0.010 to 0.017 for the learning rate.
+The **F1 test score was 0.96019** from **learning rate 0.010395**
 
 ### Hidden Units and Batch Size
 A grid search of both number of hidden units and the batch size was does together.
