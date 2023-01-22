@@ -109,26 +109,40 @@ A grid search of both number of hidden units and the batch size was does togethe
 - A single Dense layer with the hidden units followed by a Batch Normalization layer followed by a Dropout of 30% was added between the pre-trained model and the output layer.
 - 5 hidden unit values were tried **[4096, 2048, 1024, 512, 256]** for the single Dense layer
 - 3 batch sizes of **[32, 64, 128]** * 8 TPU replicas
+- Test results improved to **F1 score of 0.9699** for hidden units **4096** and **mini batch size 32**
 
 ### Number of Hidden Layers
 - Test out hidden layers by adding one layer at a time with **each new layer containing half the number of nodes**, with Batch Norm and Dropout at 30%.
 - Test out hidden layers by **starting with two Dense layers of 4096 nodes** and adding one layer at time each with **half the number of nodes as the previous layer**.
+- Adding more layers **did not improve** the F1 score. 1 trainable dense layer of 4096 was selected for next steps.
 
 ### Learning Rate Decay
 - 8 learning rate decay values randomly selected
     - The formula for the decay is learning_rate * 0.1 ** (epoch / s) and the **s value** was randomly selected **between 10 and 80**.
+- Test results improved to **F1 score 0.9711** using s value 31
  
 ### Momentum Values
 - 8 momentum values between 0.7 and 0.99
+- **No improvement from trying different momentum values.** Best F1 score was 0.9699
  
-## Best Results From Hyperparameter Tuning
-- **Learning Rate:** 0.06103
-- **Hidden Units:** 4096
+## Best Results From Hyperparameter Random Tuning
+- **Learning Rate:** 0.01120581
+- **Hidden Units:** 4358
 - **Batch Size:** 32 * 8 TPUs
 - **Learning Rate Decay:** s value of 34
-- **Momentum:** 0.84
+- **Momentum:** 0.78
 
-**Resulting in Validation Accuracy of 0.9746**
+**Resulting in F1 Score of 0.9699 which was not beter than learning rate decay results**
+
+## Best Results From Hyperparameter Tuning
+- **Learning Rate:** 0.01120581
+- **Hidden Units:** 4096
+- **Batch Size:** 32 * 8 TPUs
+- **Learning Rate Decay:** s value of 31
+- **Momentum:** 0.9 (default)
+
+
+
  
  ### Fine Tune Based on Individual Results
  
