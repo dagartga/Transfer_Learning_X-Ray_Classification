@@ -145,5 +145,17 @@ A grid search of both number of hidden units and the batch size was does togethe
 
  
  ### Fine Tune Based on Individual Results
+ A final search of hyperparameters Learning Rate, Mometum, and Learning Rate decay was performed. The trainable layer was one Dense layer with 4096 hidden units and 30% dropout. The Batch size was held consistent at 32 * 8 TPUs for 256 batch size. 
  
+ - Learning Rate Search: Random search between 0.1 and 0.01
+ - Momentum Search: Grid search of 0.76, 0.78, 0.80, 0.82, 0.84
+ - Learning Rate Decay Search: Random search between 25 to 40 for the s value
+ 
+ #### Best Hyper-Parameters
+ - **Learning Rate:** 0.07943
+ - **Hidden Units:** 4096
+ - **Batch Size:** 32 * 8 TPUs
+ - **Learning Rate Decay:** s value of 29
+ - **Momentum:** 0.78 
+ - Test Statistics: AUC = 0.9895, F1 = 0.9717, Recall = 0.97055, Precision = 0.9729
  
