@@ -1,5 +1,17 @@
 # Transfer Learning X-Ray Classification for Pneumonia Detection
 
+## Summary
+- **Imbalanced distribution of classes** among train, val, and test sets needed to be redistributed for training and validation to work properly.
+- Four base models for transer learning CNN frameworks were used to start: **VGG-16, InceptionV3, ResNet-50, DenseNet-201**
+- Best base model was **DenseNet-201** was used while searching hyperparameters: **learning rate, # of hidden units, # of Dense layers, learning rate decay, batch size, and momentum**
+- Final model performs with publication level results: 
+  - AUC = 0.9895 
+  - F1 = 0.9717
+  - Recall = 0.97055 
+  - Precision = 0.9729
+
+
+
 ## Exploratory Data Analysis
 From the notebook [transfer-learning-x-ray-eda](./notebooks/transfer-learning-x-ray-eda.ipynb)
 
