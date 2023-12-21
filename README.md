@@ -28,7 +28,7 @@ For a dataset of 5856 images, which is quite small for image classification, the
 
 Comparison of the distribution of Pneumonia and Normal images between the training, validation, and test set shows that there is a significant imbalance between the groups.
 
-![Class Distribtuions](./images/Class_distributions.png)
+![Class Distributions](./images/Class_distributions.png)
 
 The biggest issue is that the **validation set is not the same distribution as the test set**, which means that a model that performs well on the validation set may not do well on the test set.
 Through the random redistribution of images in Step1, the image class distribution should be very similar between training, validation, and test sets after that step.
