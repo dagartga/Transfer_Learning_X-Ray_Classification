@@ -169,5 +169,9 @@ A grid search of both number of hidden units and the batch size was does togethe
  - **Batch Size:** 32 * 8 TPUs
  - **Learning Rate Decay:** s value of 29
  - **Momentum:** 0.78 
- - Test Statistics: AUC = 0.9895, F1 = 0.9717, Recall = 0.97055, Precision = 0.9729
+ - **Test Statistics:**
+     - AUC = 0.9895
+     - F1 = 0.9717
+     - Recall = 0.97055
+     - Precision = 0.9729
  
